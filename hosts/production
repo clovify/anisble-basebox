@@ -1,0 +1,9 @@
+[webservers]
+roy.bladerunner.shrikeh.net
+deckard.bladerunner.shrikeh.net
+
+[bastions]
+pris.bladerunner.shrikeh.net
+
+[rabbitmq]
+jfsebastian.bladerunner.shrikeh.net

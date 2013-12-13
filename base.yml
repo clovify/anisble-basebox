@@ -1,0 +1,7 @@
+- hosts: all
+  connection: local
+- hosts: rabbitmq
+  roles:
+    - common
+    - rabbitmq
+  gather_facts: true

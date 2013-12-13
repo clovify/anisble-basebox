@@ -1,0 +1,11 @@
+- name: Set basic packages for Ubuntu common to all 
+- apt: update_cache=yes
+- apt: upgrade=dist
+- apt: pkg=vim state=present
+- apt: pkg=curl state=present
+- apt: pkg=screen state=present
+- apt: pkg=ruby1.9.3 state=present
+- apt: pkg=denyhosts state=present
+- apt: pkg=zsh state=present
+- apt: pkg=acl state=present
+

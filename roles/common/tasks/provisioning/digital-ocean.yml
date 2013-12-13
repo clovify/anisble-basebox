@@ -1,0 +1,24 @@
+
+- name: ensure SSH key exists
+  digital_ocean: >
+      state=present
+      command=ssh
+      name=case
+
+- name: ensure droplet exists
+  digital_ocean: >
+      state=present
+      ssh_key_ids={{ digitalocean.ssh_key_id }}
+      name={{ inventory_hostname }}
+      size_id={{ digitalocean.size_id }}
+      region_id={{ digitalocean.region_id }}
+      image_id={{ digitalocean.image_id }}
+      wait_timeout=500
+      private_networking=yes
+      virtio=yes
+      wait=yes
+      unique_name=yes
+      wait_timeout=500
+  register: digitalocean
+- debug: msg="IP is {{ digitalocean.droplet.id }}"
+- debug: msg="IP is {{ digitalocean.droplet.ip_address }}"
