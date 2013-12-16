@@ -1,0 +1,31 @@
+- name: Setup a new instance
+  hosts: production:webservers
+  connection: local
+  user: root
+  gather_facts: false
+  tasks:
+    - name: Ensure the ssh key for root is setup
+      local_action: 
+        digital_ocean: >
+          state=present
+          command=ssh
+          name=case
+    - name:
+      local_action: 
+        digital_ocean: >
+          state=present
+          ssh_key_ids={{ digitalocean.ssh_key_id }}
+          name={{ inventory_hostname }}
+          size_id={{ digitalocean.size_id }}
+          region_id={{ digitalocean.region_id }}
+          image_id={{ digitalocean.image_id }}
+          wait_timeout=500
+          private_networking=yes
+          virtio=yes
+          wait=yes
+          unique_name=yes
+          wait_timeout=500  
+      register: digitalocean
+      - name: Itemised 
+        local_action: add_host hostname=${item.droplet.ip_address} groupname=launched
+        with_items: ${digitalocean.results}

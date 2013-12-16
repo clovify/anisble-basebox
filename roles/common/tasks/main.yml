@@ -1,1 +1,2 @@
+  - name: Launch Digital Ocean instance
   - include: "digital-ocean.yml"
