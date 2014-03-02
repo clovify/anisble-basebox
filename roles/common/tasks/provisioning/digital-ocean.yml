@@ -7,11 +7,11 @@
 - name: ensure droplet exists
   digital_ocean: >
       state=present
-      ssh_key_ids={{ digitalocean.ssh_key_id }}
+      ssh_key_ids=57705
       name={{ inventory_hostname }}
-      size_id={{ digitalocean.size_id }}
-      region_id={{ digitalocean.region_id }}
-      image_id={{ digitalocean.image_id }}
+      size_id=66
+      region_id=4
+      image_id=1505699
       wait_timeout=500
       private_networking=yes
       virtio=yes

@@ -1,9 +1,12 @@
 [webservers]
-roy.bladerunner.shrikeh.net
-deckard.bladerunner.shrikeh.net
+picard.drupalcamp.shrikeh.net
+kirk.drupalcamp.shrikeh.net
 
 [bastions]
-pris.bladerunner.shrikeh.net
+archer.drupalcamp.shrikeh.net
 
 [rabbitmq]
-jfsebastian.bladerunner.shrikeh.net
+janeway.drupalcamp.shrikeh.net
+
+[mongodb]
+sisko.drupalcamp.shrikeh.net

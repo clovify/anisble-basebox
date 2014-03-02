@@ -2,9 +2,8 @@
 
 set -e
 
-export HOSTFILE='/Users/shrikeh/Projects/shrikeh.net/anisble-basebox/hosts/production'
-export PLAYBOOK_PATH='/Users/shrikeh/Projects/shrikeh.net/ansible';
-export PLAYBOOK_FILE="${PLAYBOOK_PATH}/playbook.yml";
+export HOSTFILE='hosts/production'
+export PLAYBOOK_FILE="base.yml";
 
 export ANSIBLE_HOST_KEY_CHECKING=false
 
